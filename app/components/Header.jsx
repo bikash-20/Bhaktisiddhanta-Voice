@@ -89,7 +89,7 @@ export default function Header() {
               })}
               <Link
                 href="/courses#register"
-                className="ml-3 inline-flex items-center gap-1.5 rounded-full bg-mantra-gradient px-4 py-2 text-sm font-semibold text-cream-50 shadow-glow hover:shadow-soft transition-all duration-300 hover:-translate-y-0.5 tap sheen"
+                className="pill-button pill-button-primary ml-3"
               >
                 <span>Join</span>
                 <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L10.94 10 7.23 6.29a.75.75 0 011.04-1.08l4.25 4.25a.75.75 0 010 1.08l-4.25 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd"/></svg>

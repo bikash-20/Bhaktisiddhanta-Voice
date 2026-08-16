@@ -10,13 +10,13 @@ const CATEGORIES = ["All", "Temple", "Deities", "Meals", "Sanga", "Festivals"];
 
 const PHOTOS = [
   { src: "/images/hero.jpg", cat: "Temple", title: "Main temple hall" },
-  { src: "/images/jagannath.jpg", cat: "Deities", title: "Sri Sri Jagannath darshan" },
+  { src: "/images/section-2.jpg", cat: "Deities", title: "Sri Krishna portrait" },
   { src: "/images/section-3.jpg", cat: "Meals", title: "Prasadam distribution" },
   { src: "/images/hero.jpg", cat: "Sanga", title: "Kirtan evening" },
-  { src: "/images/jagannath.jpg", cat: "Festivals", title: "Rath Yatra procession" },
+  { src: "/images/section-2.jpg", cat: "Festivals", title: "Festival darshan" },
   { src: "/images/section-3.jpg", cat: "Sanga", title: "Study circle" },
   { src: "/images/hero.jpg", cat: "Festivals", title: "Janmashtami celebrations" },
-  { src: "/images/jagannath.jpg", cat: "Temple", title: "Aarti ceremony" },
+  { src: "/images/section-2.jpg", cat: "Temple", title: "Daily remembrance" },
   { src: "/images/section-3.jpg", cat: "Sanga", title: "Group at the temple" },
   { src: "/images/hero.jpg", cat: "Meals", title: "Preparing prasadam" },
   { src: "/images/section-2.jpg", cat: "Deities", title: "Sri Sri Radha-Krishna darshan" },
@@ -83,7 +83,7 @@ export default function GalleryPage() {
                     src={p.src}
                     alt={p.title}
                     fill
-                    className="object-cover object-center group-hover:scale-105 transition duration-700"
+                    className="object-cover deity-portrait group-hover:scale-105 transition duration-700"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-royal-950/85 via-royal-950/0 to-transparent opacity-90" />

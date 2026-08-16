@@ -78,27 +78,28 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10">
+      <section className="relative overflow-hidden isolate">
+        <div className="absolute inset-0 -z-20">
           <Image
             src="/images/hero.jpg"
             alt="Bhaktisiddhanta Voice community gathered at the temple"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-center scale-[1.06]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-royal-950/85 via-royal-950/65 to-royal-950/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-royal-950/90 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,167,74,0.22),_transparent_28%),linear-gradient(120deg,rgba(13,20,31,0.88),rgba(20,34,54,0.74),rgba(28,53,66,0.62),rgba(20,28,44,0.82))]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-royal-950/95 via-royal-950/45 to-transparent" />
         </div>
+        <div className="absolute inset-x-0 top-20 -z-10 h-80 bg-[radial-gradient(circle,_rgba(244,185,90,0.22),_transparent_60%)] blur-3xl" />
 
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 pt-20 pb-24 md:pt-28 md:pb-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-20 md:pb-24">
           <HeroMotion />
         </div>
 
         {/* Mantra ribbon */}
-        <div className="relative -mt-12 mb-12 z-10 px-5 sm:px-8">
-          <div className="mx-auto max-w-5xl rounded-2xl glass-dark px-6 py-5 md:py-6 ring-1 ring-gold-400/30 shadow-soft">
+        <div className="relative -mt-8 mb-10 z-10 px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl rounded-[1.6rem] glass-dark px-5 py-4 md:px-7 md:py-5 ring-1 ring-gold-400/30 shadow-[0_18px_38px_-22px_rgba(0,0,0,0.72)]">
             <Mantra className="" />
           </div>
         </div>
@@ -133,10 +134,10 @@ export default function Home() {
                 graduation — every part of the organization is built around the student.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="/about" className="inline-flex items-center gap-2 rounded-full bg-royal-950 px-5 py-2.5 text-sm font-semibold text-cream-50 hover:bg-royal-800 transition">
+                <Link href="/about" className="pill-button pill-button-primary">
                   Read our story
                 </Link>
-                <Link href="/programs" className="inline-flex items-center gap-2 rounded-full border border-maroon-700/30 px-5 py-2.5 text-sm font-semibold text-maroon-700 hover:bg-maroon-50 transition">
+                <Link href="/programs" className="pill-button pill-button-ghost">
                   Explore programs
                 </Link>
               </div>
@@ -183,7 +184,7 @@ export default function Home() {
               <Reveal key={h.title} delay={i * 0.05}>
                 <Link
                   href={h.href}
-                  className="group relative block h-full rounded-2xl bg-cream-50 p-7 ring-1 ring-gold-400/20 shadow-soft hover:shadow-glow hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                  className="group relative block h-full rounded-[1.75rem] bg-cream-50/90 p-6 sm:p-7 ring-1 ring-gold-400/20 shadow-soft soft-card overflow-hidden cinematic-panel"
                 >
                   <div className={`absolute -top-12 -right-12 h-32 w-32 rounded-full bg-gradient-to-br ${h.accent} opacity-15 group-hover:opacity-25 transition`} />
                   <div className={`grid place-items-center h-12 w-12 rounded-xl bg-gradient-to-br ${h.accent} text-cream-50 shadow-soft`}>
@@ -193,7 +194,7 @@ export default function Home() {
                     {h.title}
                   </h3>
                   <p className="mt-2 text-royal-900/75 leading-relaxed">{h.desc}</p>
-                  <div className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-maroon-700 group-hover:gap-2 transition-all">
+                  <div className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-maroon-700/20 bg-maroon-50/80 px-3 py-1.5 text-sm font-semibold text-maroon-700 transition-all duration-300 group-hover:gap-2 group-hover:border-maroon-700/40 group-hover:bg-maroon-100/80">
                     Learn more
                     <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L10.94 10 7.23 6.29a.75.75 0 011.04-1.08l4.25 4.25a.75.75 0 010 1.08l-4.25 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd"/></svg>
                   </div>
@@ -242,13 +243,13 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row md:justify-end gap-3">
-                  <Link href="/courses#register" className="inline-flex justify-center items-center gap-2 rounded-full bg-cream-50 px-6 py-3 text-sm font-semibold text-maroon-700 hover:bg-cream-100 transition">
+                  <Link href="/courses#register" className="pill-button pill-button-primary">
                     Register now
                   </Link>
-                  <a href="https://wa.me/8801993210511" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center gap-2 rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-cream-50 hover:bg-emerald-600 transition">
+                  <a href="https://wa.me/8801993210511" target="_blank" rel="noopener noreferrer" className="pill-button pill-button-secondary">
                     Chat on WhatsApp
                   </a>
-                  <Link href="/contact" className="inline-flex justify-center items-center gap-2 rounded-full border border-cream-50/40 px-6 py-3 text-sm font-semibold text-cream-50 hover:bg-cream-50/10 transition">
+                  <Link href="/contact" className="pill-button pill-button-secondary">
                     Visit us
                   </Link>
                 </div>
