@@ -133,8 +133,8 @@ export default function RegistrationForm({
 
   return (
     <div className="rounded-[2rem] bg-cream-50 ring-1 ring-gold-400/20 shadow-soft p-4 md:p-6 lg:p-8">
-      <div className="grid lg:grid-cols-[1.1fr_1.4fr] gap-5 md:gap-6">
-        <div className="relative overflow-hidden rounded-[1.6rem] bg-royal-950">
+      <div className="grid lg:grid-cols-[1.1fr_1.4fr] gap-5 md:gap-6 items-start">
+        <div className="relative w-full overflow-hidden rounded-[1.6rem] bg-royal-950">
           <Image
             src={IMAGES.formSubmission}
             alt="Bhaktisiddhanta Voice devotional artwork"
