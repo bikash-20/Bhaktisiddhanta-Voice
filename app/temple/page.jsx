@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "../components/Reveal";
 import PageHero from "../components/PageHero";
 import Mantra from "../components/Mantra";
+import { IMAGES } from "../lib/images";
 
 export const metadata = {
   title: "Temple & Deities",
@@ -30,14 +31,14 @@ const DEITIES = [
     name: "Sri Sri Radha-Krishna",
     note: "The divine couple — Radharani and Krishna — preside over the temple with the sweetest pastimes of Vrindavan. Their darshan is the heart of our daily practice.",
     mantra: "Radhe Radhe",
-    image: "/images/section-2.jpg",
+    image: IMAGES.section2,
     accent: "from-maroon-500 to-saffron-500",
   },
   {
     name: "Sri Jagannath",
     note: "The Lord's merciful presence is felt in the temple through kirtan, prayer, and the stillness of daily remembrance. His face, His name, and His pastimes guide every student who comes to the sanga.",
     mantra: "Hare Krishna",
-    image: "/images/jagannath.jpg",
+    image: IMAGES.jagannath,
     accent: "from-royal-600 to-maroon-600",
   },
 ];
@@ -70,8 +71,8 @@ export default function TemplePage() {
               </div>
             </Reveal>
             <Reveal className="md:col-span-5">
-              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft bg-royal-950">
-                <Image src="/images/section-2.jpg" alt="Sri Krishna face portrait" fill className="object-cover deity-portrait" sizes="(max-width: 768px) 100vw, 40vw" />
+              <div className="relative rounded-3xl overflow-hidden shadow-soft bg-royal-950">
+                <Image src={IMAGES.section2} alt="Sri Krishna face portrait" className="w-full h-auto" />
               </div>
             </Reveal>
           </div>
@@ -84,8 +85,8 @@ export default function TemplePage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className={`grid md:grid-cols-12 gap-10 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}>
               <Reveal className="md:col-span-6">
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20 bg-royal-950">
-                  <Image src={d.image} alt={d.name} fill className="object-cover deity-portrait" sizes="(max-width: 768px) 100vw, 50vw" />
+                <div className="relative rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20 bg-royal-950">
+                  <Image src={d.image} alt={d.name} className="w-full h-auto" />
                 </div>
               </Reveal>
               <Reveal className="md:col-span-6" delay={0.1}>

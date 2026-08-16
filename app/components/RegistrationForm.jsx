@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { IMAGES } from "../lib/images";
 
 /**
  * RegistrationForm — reusable for Course + Alumni (and Contact).
@@ -130,14 +131,12 @@ export default function RegistrationForm({
   return (
     <div className="rounded-[2rem] bg-cream-50 ring-1 ring-gold-400/20 shadow-soft p-4 md:p-6 lg:p-8">
       <div className="grid lg:grid-cols-[1.1fr_1.4fr] gap-5 md:gap-6">
-        <div className="relative overflow-hidden rounded-[1.6rem] bg-royal-950 min-h-[220px] md:min-h-[300px]">
+        <div className="relative overflow-hidden rounded-[1.6rem] bg-royal-950">
           <Image
-            src="/images/form-submission.jpg"
+            src={IMAGES.formSubmission}
             alt="Bhaktisiddhanta Voice devotional artwork"
-            fill
-            className="object-cover object-center"
+            className="w-full h-auto"
             priority
-            sizes="(max-width: 1024px) 100vw, 35vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-royal-950/85 via-royal-950/20 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 text-cream-50">

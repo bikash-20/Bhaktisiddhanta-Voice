@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Reveal from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { IMAGES } from "../lib/images";
 
 export const metadata = {
   title: "About Us",
@@ -68,8 +69,8 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-6">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft bg-royal-950">
-                <Image src="/images/hero.jpg" alt="Our temple community" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
+              <div className="relative rounded-3xl overflow-hidden shadow-soft bg-royal-950">
+                <Image src={IMAGES.hero} alt="Our temple community" className="w-full h-auto" />
               </div>
             </Reveal>
             <Reveal className="md:col-span-6" delay={0.1}>
@@ -115,13 +116,11 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-5">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft bg-royal-950">
+              <div className="relative rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft bg-royal-950">
                 <Image
-                  src="/images/founder.jpg"
+                  src={IMAGES.founder}
                   alt="Dr. Gitendranath Adhikary, Founder of Bhaktisiddhanta Voice"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="w-full h-auto"
                 />
               </div>
               <div className="mt-4 rounded-2xl bg-cream-50 ring-1 ring-gold-400/20 p-4 shadow-soft">

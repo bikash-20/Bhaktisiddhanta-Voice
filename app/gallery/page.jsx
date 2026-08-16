@@ -5,22 +5,23 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Reveal from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { IMAGES } from "../lib/images";
 
 const CATEGORIES = ["All", "Temple", "Deities", "Meals", "Sanga", "Festivals"];
 
 const PHOTOS = [
-  { src: "/images/hero.jpg", cat: "Temple", title: "Main temple hall" },
-  { src: "/images/section-2.jpg", cat: "Deities", title: "Sri Krishna portrait" },
-  { src: "/images/section-3.jpg", cat: "Meals", title: "Prasadam distribution" },
-  { src: "/images/jagannath.jpg", cat: "Deities", title: "Sri Jagannath darshan" },
-  { src: "/images/hero.jpg", cat: "Sanga", title: "Kirtan evening" },
-  { src: "/images/section-3.jpg", cat: "Festivals", title: "Festival darshan" },
-  { src: "/images/section-2.jpg", cat: "Sanga", title: "Study circle" },
-  { src: "/images/hero.jpg", cat: "Festivals", title: "Janmashtami celebrations" },
-  { src: "/images/jagannath.jpg", cat: "Temple", title: "Daily remembrance" },
-  { src: "/images/section-3.jpg", cat: "Meals", title: "Preparing prasadam" },
-  { src: "/images/section-2.jpg", cat: "Deities", title: "Sri Sri Radha-Krishna darshan" },
-  { src: "/images/founder.jpg", cat: "Temple", title: "Founder with the sanga" },
+  { src: IMAGES.hero, cat: "Temple", title: "Main temple hall" },
+  { src: IMAGES.section2, cat: "Deities", title: "Sri Krishna portrait" },
+  { src: IMAGES.section3, cat: "Meals", title: "Prasadam distribution" },
+  { src: IMAGES.jagannath, cat: "Deities", title: "Sri Jagannath darshan" },
+  { src: IMAGES.hero, cat: "Sanga", title: "Kirtan evening" },
+  { src: IMAGES.section3, cat: "Festivals", title: "Festival darshan" },
+  { src: IMAGES.section2, cat: "Sanga", title: "Study circle" },
+  { src: IMAGES.hero, cat: "Festivals", title: "Janmashtami celebrations" },
+  { src: IMAGES.jagannath, cat: "Temple", title: "Daily remembrance" },
+  { src: IMAGES.section3, cat: "Meals", title: "Preparing prasadam" },
+  { src: IMAGES.section2, cat: "Deities", title: "Sri Sri Radha-Krishna darshan" },
+  { src: IMAGES.founder, cat: "Temple", title: "Founder with the sanga" },
 ];
 
 export default function GalleryPage() {
@@ -78,13 +79,11 @@ export default function GalleryPage() {
                 onClick={() => setOpen(i)}
                 className="relative mb-5 block w-full break-inside-avoid overflow-hidden rounded-2xl ring-1 ring-gold-400/20 hover:ring-gold-400/60 transition shadow-soft group focus-ring"
               >
-                <div className={`relative w-full ${i % 5 === 0 ? "h-96" : i % 4 === 0 ? "h-72" : "h-56"}`}>
+                <div className="relative w-full">
                   <Image
                     src={p.src}
                     alt={p.title}
-                    fill
-                    className="object-cover deity-portrait group-hover:scale-105 transition duration-700"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="w-full h-auto group-hover:scale-105 transition duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-royal-950/85 via-royal-950/0 to-transparent opacity-90" />
                   <div className="absolute bottom-3 left-4 right-4 text-cream-50 text-left">
@@ -119,8 +118,8 @@ export default function GalleryPage() {
               onClick={(e) => e.stopPropagation()}
               className="relative max-w-5xl w-full rounded-3xl overflow-hidden ring-1 ring-gold-400/40 shadow-soft bg-royal-950"
             >
-              <div className="relative aspect-[4/3]">
-                <Image src={photo(open).src} alt={photo(open).title} fill className="object-cover" />
+              <div className="relative">
+                <Image src={photo(open).src} alt={photo(open).title} className="w-full h-auto" />
                 <div className="absolute inset-0 bg-gradient-to-t from-royal-950/85 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-cream-50">
                   <div className="text-xs uppercase tracking-widest text-gold-300">{photo(open).cat}</div>

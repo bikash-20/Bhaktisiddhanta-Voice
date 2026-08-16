@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "../components/Reveal";
 import PageHero from "../components/PageHero";
 import RegistrationForm from "../components/RegistrationForm";
+import { IMAGES } from "../lib/images";
 
 export const metadata = {
   title: "Alumni Network",
@@ -94,8 +95,8 @@ export default function AlumniPage() {
               </div>
             </Reveal>
             <Reveal className="md:col-span-5">
-              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/30 bg-royal-950">
-                <Image src="/images/hero.jpg" alt="Alumni gathering" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 40vw" />
+              <div className="relative rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/30 bg-royal-950">
+                <Image src={IMAGES.hero} alt="Alumni gathering" className="w-full h-auto" />
               </div>
               <div className="mt-4 rounded-2xl bg-cream-50 ring-1 ring-gold-400/20 p-4 shadow-soft">
                 <div className="text-xs uppercase tracking-widest text-maroon-700">Alumni Meet</div>

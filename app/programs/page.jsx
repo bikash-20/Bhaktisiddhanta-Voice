@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "../components/Reveal";
 import PageHero from "../components/PageHero";
+import { IMAGES } from "../lib/images";
 
 export const metadata = {
   title: "Programs",
@@ -23,7 +24,7 @@ const PROGRAMS = [
     ],
     cta: "Have your first meal",
     ctaHref: "/contact",
-    image: "/images/section-3.jpg",
+    image: IMAGES.section3,
     accent: "from-maroon-600 to-saffron-500",
     reverse: false,
   },
@@ -40,7 +41,7 @@ const PROGRAMS = [
     ],
     cta: "Apply for residence",
     ctaHref: "/contact",
-    image: "/images/section-2.jpg",
+    image: IMAGES.section2,
     accent: "from-royal-600 to-royal-800",
     reverse: true,
   },
@@ -57,7 +58,7 @@ const PROGRAMS = [
     ],
     cta: "Join a study circle",
     ctaHref: "/courses",
-    image: "/images/section-2.jpg",
+    image: IMAGES.section2,
     accent: "from-saffron-500 to-gold-600",
     reverse: false,
   },
@@ -78,8 +79,8 @@ export default function ProgramsPage() {
             <div className="mx-auto max-w-7xl px-5 sm:px-8">
               <div className={`grid md:grid-cols-12 gap-10 items-center ${p.reverse ? "md:[&>*:first-child]:order-2" : ""}`}>
                 <Reveal className="md:col-span-6">
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20 bg-royal-950">
-                    <Image src={p.image} alt={p.title} fill className="object-cover deity-portrait" sizes="(max-width: 768px) 100vw, 50vw" />
+                  <div className="relative rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20 bg-royal-950">
+                    <Image src={p.image} alt={p.title} className="w-full h-auto" />
                   </div>
                 </Reveal>
                 <Reveal className="md:col-span-6" delay={0.1}>

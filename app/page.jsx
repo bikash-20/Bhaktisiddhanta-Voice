@@ -3,6 +3,7 @@ import Image from "next/image";
 import Reveal from "./components/Reveal";
 import Mantra from "./components/Mantra";
 import HeroMotion from "./components/HeroMotion";
+import { IMAGES } from "./lib/images";
 
 export const metadata = {
   title: "Bhaktisiddhanta Voice — Where students meet Krishna consciousness",
@@ -79,14 +80,14 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden isolate">
-        <div className="absolute inset-0 -z-20">
+        <div className="absolute inset-0 -z-20 overflow-hidden">
           <Image
-            src="/images/hero.jpg"
+            src={IMAGES.hero}
             alt="Bhaktisiddhanta Voice community gathered at the temple"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center scale-[1.06]"
+            className="hero-bg-image object-cover object-center"
           />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,167,74,0.22),_transparent_28%),linear-gradient(120deg,rgba(13,20,31,0.88),rgba(20,34,54,0.74),rgba(28,53,66,0.62),rgba(20,28,44,0.82))]" />
           <div className="absolute inset-0 bg-gradient-to-t from-royal-950/95 via-royal-950/45 to-transparent" />
@@ -110,8 +111,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-5">
-              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft bg-royal-950">
-                <Image src="/images/section-3.jpg" alt="Students gathering" fill className="object-cover object-center" />
+              <div className="relative rounded-3xl overflow-hidden shadow-soft bg-royal-950">
+                <Image src={IMAGES.section3} alt="Students gathering" className="w-full h-auto" />
               </div>
             </Reveal>
             <Reveal className="md:col-span-7" delay={0.1}>
