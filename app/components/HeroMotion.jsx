@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import WordReveal from "./WordReveal";
 
 export default function HeroMotion() {
   return (
@@ -16,17 +17,16 @@ export default function HeroMotion() {
           <span className="h-1.5 w-1.5 rounded-full bg-gold-400" /> Estd. 2009 · Sylhet
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 22 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+        <WordReveal
+          as="h1"
+          delay={0.1}
+          stagger={0.05}
           className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl xl:text-[5.6rem] font-semibold leading-[0.96] tracking-[-0.04em]"
-        >
-          Where students meet{" "}
-          <span className="block bg-gradient-to-r from-gold-300 via-saffron-300 to-maroon-300 bg-clip-text text-transparent">
-            Krishna consciousness.
-          </span>
-        </motion.h1>
+          lines={[
+            { text: "Where students meet" },
+            { text: "Krishna consciousness.", gradient: true },
+          ]}
+        />
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

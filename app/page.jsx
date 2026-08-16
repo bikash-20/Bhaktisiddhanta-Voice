@@ -3,6 +3,7 @@ import Image from "next/image";
 import Reveal from "./components/Reveal";
 import Mantra from "./components/Mantra";
 import HeroMotion from "./components/HeroMotion";
+import WordReveal from "./components/WordReveal";
 import { IMAGES } from "./lib/images";
 
 export const metadata = {
@@ -80,14 +81,14 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden isolate">
-        <div className="absolute inset-0 -z-20 overflow-hidden">
+        <div className="absolute inset-0 -z-20 overflow-hidden bg-royal-950">
           <Image
             src={IMAGES.hero}
             alt="Bhaktisiddhanta Voice community gathered at the temple"
             fill
             priority
             sizes="100vw"
-            className="hero-bg-image object-cover object-center"
+            className="hero-bg-image object-cover object-center max-lg:object-contain"
           />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,167,74,0.22),_transparent_28%),linear-gradient(120deg,rgba(13,20,31,0.88),rgba(20,34,54,0.74),rgba(28,53,66,0.62),rgba(20,28,44,0.82))]" />
           <div className="absolute inset-0 bg-gradient-to-t from-royal-950/95 via-royal-950/45 to-transparent" />
@@ -117,9 +118,11 @@ export default function Home() {
             </Reveal>
             <Reveal className="md:col-span-7" delay={0.1}>
               <div className="text-xs uppercase tracking-[0.28em] text-maroon-700 mb-3">Our calling</div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-royal-950 leading-tight">
-                A home that nourishes body, mind, and soul.
-              </h2>
+              <WordReveal
+                as="h2"
+                className="font-display text-3xl sm:text-4xl md:text-5xl text-royal-950 leading-tight"
+                lines={[{ text: "A home that nourishes body, mind, and soul." }]}
+              />
               <p className="mt-5 text-lg text-royal-900/80 leading-relaxed">
                 Founded in 2009 by Dr. Gitendranath Adhikary — professor at Sylhet Agricultural
                 University — and conducted under ISKCON Youth Forum, Sylhet, Bhaktisiddhanta Voice
@@ -170,9 +173,11 @@ export default function Home() {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
               <div className="text-xs uppercase tracking-[0.28em] text-maroon-700 mb-3">What we do</div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-royal-950 leading-tight">
-                Six doors into the sanga.
-              </h2>
+              <WordReveal
+                as="h2"
+                className="font-display text-3xl sm:text-4xl md:text-5xl text-royal-950 leading-tight"
+                lines={[{ text: "Six doors into the sanga." }]}
+              />
               <div className="ornament-rule mt-6 mx-auto max-w-xs" />
             </div>
           </Reveal>

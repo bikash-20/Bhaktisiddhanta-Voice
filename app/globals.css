@@ -79,6 +79,35 @@ body {
   }
 }
 
+/* Gold shimmer sweep for gradient headlines */
+.shimmer-gold {
+  background: linear-gradient(
+    115deg,
+    #f0c94d 0%,
+    #e8b022 24%,
+    #f6b365 40%,
+    #fdf3dc 50%,
+    #f6b365 60%,
+    #e8b022 76%,
+    #f0c94d 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: shimmerGold 5.5s linear infinite;
+}
+
+@keyframes shimmerGold {
+  from {
+    background-position: 200% center;
+  }
+  to {
+    background-position: -200% center;
+  }
+}
+
 .glass {
   background: rgba(253, 250, 243, 0.7);
   backdrop-filter: saturate(180%) blur(14px);

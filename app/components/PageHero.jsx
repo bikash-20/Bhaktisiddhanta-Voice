@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import WordReveal from "./WordReveal";
 
 export default function PageHero({ eyebrow, title, subtitle, children, align = "center" }) {
   const isCenter = align === "center";
@@ -21,11 +22,13 @@ export default function PageHero({ eyebrow, title, subtitle, children, align = "
               </div>
             </Reveal>
           )}
-          <Reveal delay={0.05}>
-            <h1 className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-royal-950 leading-[1.05]">
-              {title}
-            </h1>
-          </Reveal>
+          <WordReveal
+            as="h1"
+            delay={0.08}
+            stagger={0.05}
+            className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-royal-950 leading-[1.05]"
+            lines={[{ text: title }]}
+          />
           {subtitle && (
             <Reveal delay={0.1}>
               <p className="mt-5 text-base sm:text-lg text-royal-900/80 leading-relaxed">
