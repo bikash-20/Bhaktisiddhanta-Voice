@@ -49,11 +49,11 @@ export default function Header() {
           <div className="flex h-16 md:h-20 items-center justify-between">
             {/* Logo / wordmark */}
             <Link href="/" className="group flex items-center gap-3 focus-ring">
-              <span className="grid place-items-center h-11 w-11 sm:h-14 sm:w-14 rounded-full bg-cream-50 ring-1 ring-gold-300 shadow-soft transition group-hover:scale-105 overflow-hidden">
-                <Logo className="h-10 w-10 sm:h-12 sm:w-12" />
+              <span className="grid place-items-center h-11 w-11 sm:h-14 sm:w-14 rounded-full bg-cream-50 ring-1 ring-gold-300 shadow-soft transition-all duration-500 group-hover:scale-105 group-hover:ring-gold-500 group-hover:shadow-glow overflow-hidden">
+                <Logo className="h-10 w-10 sm:h-12 sm:w-12 transition-transform duration-500 group-hover:rotate-3" />
               </span>
               <div className="leading-tight">
-                <div className="font-display text-[1.05rem] sm:text-[1.2rem] font-semibold text-royal-950">
+                <div className="font-display text-[1.05rem] sm:text-[1.2rem] font-semibold text-royal-950 transition-colors duration-300 group-hover:text-maroon-700">
                   Bhaktisiddhanta Voice
                 </div>
                 <div className="text-[0.65rem] sm:text-[0.72rem] tracking-widest uppercase text-maroon-700">
@@ -71,10 +71,10 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`relative px-3 py-2 text-sm font-medium tracking-wide rounded-full transition ${
+                    className={`relative px-3 py-2 text-sm font-medium tracking-wide rounded-full transition-all duration-300 tap ${
                       active
                         ? "text-maroon-700"
-                        : "text-royal-900 hover:text-maroon-600"
+                        : "text-royal-900 hover:text-maroon-600 hover:bg-maroon-50/60"
                     }`}
                   >
                     {item.label}
@@ -89,10 +89,10 @@ export default function Header() {
               })}
               <Link
                 href="/courses#register"
-                className="ml-3 inline-flex items-center gap-1.5 rounded-full bg-mantra-gradient px-4 py-2 text-sm font-semibold text-cream-50 shadow-glow hover:shadow-soft transition-all hover:-translate-y-0.5"
+                className="ml-3 inline-flex items-center gap-1.5 rounded-full bg-mantra-gradient px-4 py-2 text-sm font-semibold text-cream-50 shadow-glow hover:shadow-soft transition-all duration-300 hover:-translate-y-0.5 tap sheen"
               >
                 <span>Join</span>
-                <svg className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L10.94 10 7.23 6.29a.75.75 0 011.04-1.08l4.25 4.25a.75.75 0 010 1.08l-4.25 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd"/></svg>
+                <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L10.94 10 7.23 6.29a.75.75 0 011.04-1.08l4.25 4.25a.75.75 0 010 1.08l-4.25 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd"/></svg>
               </Link>
             </nav>
 
@@ -126,29 +126,41 @@ export default function Header() {
               className="lg:hidden overflow-hidden glass border-t border-gold-200/40"
             >
               <div className="px-5 py-4 space-y-1">
-                {NAV.map((item) => {
+                {NAV.map((item, i) => {
                   const active =
                     item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
                   return (
-                    <Link
+                    <motion.div
                       key={item.href}
-                      href={item.href}
-                      className={`block rounded-lg px-3 py-2.5 text-base font-medium ${
-                        active
-                          ? "bg-maroon-50 text-maroon-700"
-                          : "text-royal-900 hover:bg-maroon-50/60"
-                      }`}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.04, duration: 0.3 }}
                     >
-                      {item.label}
-                    </Link>
+                      <Link
+                        href={item.href}
+                        className={`block rounded-lg px-3 py-2.5 text-base font-medium transition-all duration-200 active:scale-[0.98] ${
+                          active
+                            ? "bg-maroon-50 text-maroon-700"
+                            : "text-royal-900 hover:bg-maroon-50/60 hover:translate-x-1"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
                   );
                 })}
-                <Link
-                  href="/courses#register"
-                  className="mt-2 block text-center rounded-full bg-mantra-gradient px-4 py-3 font-semibold text-cream-50 shadow-glow"
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: NAV.length * 0.04 + 0.05, duration: 0.3 }}
                 >
-                  Join a Course
-                </Link>
+                  <Link
+                    href="/courses#register"
+                    className="mt-2 block text-center rounded-full bg-mantra-gradient px-4 py-3 font-semibold text-cream-50 shadow-glow hover:shadow-soft transition-all duration-300 active:scale-[0.98]"
+                  >
+                    Join a Course
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           )}

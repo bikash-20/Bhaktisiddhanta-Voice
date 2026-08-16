@@ -68,8 +68,8 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-6">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft">
-                <Image src="/images/section-2.jpg" alt="Our temple community" fill className="object-cover" />
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft bg-royal-950">
+                <Image src="/images/section-2.jpg" alt="Our temple community" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
             </Reveal>
             <Reveal className="md:col-span-6" delay={0.1}>
@@ -115,19 +115,18 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-5">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft bg-royal-950">
                 <Image
                   src="/images/founder.jpg"
                   alt="Dr. Gitendranath Adhikary, Founder of Bhaktisiddhanta Voice"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, 40vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-royal-950/30 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-cream-50">
-                  <div className="text-xs uppercase tracking-[0.22em] text-gold-300">Founder</div>
-                  <div className="font-display text-xl mt-1">Dr. Gitendranath Adhikary</div>
-                </div>
+              </div>
+              <div className="mt-4 rounded-2xl bg-cream-50 ring-1 ring-gold-400/20 p-4 shadow-soft">
+                <div className="text-xs uppercase tracking-[0.22em] text-maroon-700">Founder</div>
+                <div className="font-display text-xl text-royal-950 mt-1">Dr. Gitendranath Adhikary</div>
               </div>
             </Reveal>
             <Reveal className="md:col-span-7" delay={0.1}>

@@ -86,7 +86,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover"
+            className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-royal-950/85 via-royal-950/65 to-royal-950/30" />
           <div className="absolute inset-0 bg-gradient-to-t from-royal-950/90 via-transparent to-transparent" />
@@ -109,9 +109,9 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-5">
-              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft">
-                <Image src="/images/section-3.jpg" alt="Students gathering" fill className="object-cover" />
-                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-cream-50/90 px-3 py-1 text-xs font-medium text-maroon-700">
+              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft bg-royal-950">
+                <Image src="/images/section-3.jpg" alt="Students gathering" fill className="object-cover object-center" />
+                <div className="absolute inset-x-0 bottom-0 inline-flex items-center gap-1.5 rounded-t-2xl bg-cream-50/95 px-4 py-2 text-xs font-medium text-maroon-700 backdrop-blur-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-maroon-500" /> A sanga for students
                 </div>
               </div>

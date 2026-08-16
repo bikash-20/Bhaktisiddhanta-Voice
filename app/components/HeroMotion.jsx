@@ -74,20 +74,20 @@ export default function HeroMotion() {
         transition={{ duration: 1.0, delay: 0.4 }}
         className="lg:col-span-5 hidden lg:block"
       >
-        <div className="relative aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft">
+        <div className="relative aspect-[4/5] rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft bg-royal-950">
           <Image
-            src="/images/section-2.jpg"
-            alt="Inside the temple"
+            src="/images/jagannath.jpg"
+            alt="Sri Sri Jagannath, Balabhadra and Subhadra"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
+            sizes="(max-width: 1024px) 100vw, 40vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-royal-950/80 via-transparent to-transparent" />
-          <div className="absolute bottom-6 left-6 right-6 text-cream-50">
-            <div className="font-display text-2xl">Daily Darshan</div>
-            <div className="text-sm text-cream-100/80 mt-1">
-              Aarti, kirtan, and quiet reflection — every evening.
-            </div>
+        </div>
+        <div className="mt-5 rounded-2xl bg-cream-50/95 ring-1 ring-gold-400/30 px-5 py-4 shadow-soft">
+          <div className="font-display text-xl text-royal-950">Sri Sri Jagannath</div>
+          <div className="text-sm text-royal-900/75 mt-1">
+            Aarti, kirtan, and quiet reflection — every evening.
           </div>
         </div>
       </motion.div>

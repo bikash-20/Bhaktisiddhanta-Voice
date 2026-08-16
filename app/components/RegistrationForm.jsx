@@ -35,7 +35,10 @@ export default function RegistrationForm({
     formType,
   });
 
-  const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  const update = (e) => {
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+  };
 
   const validate = () => {
     const errors = [];
@@ -135,49 +138,49 @@ export default function RegistrationForm({
         <input type="hidden" name="formType" value={formType} />
 
         <Field label="Full Name *">
-          <input id="fullName" type="text" required value={form.fullName} onChange={update("fullName")} className={inputCls} placeholder="e.g. Arjun Das" />
+          <input id="fullName" name="fullName" type="text" required value={form.fullName} onChange={update} className={inputCls} placeholder="e.g. Arjun Das" />
         </Field>
 
         <Field label="WhatsApp Number *">
-          <input id="whatsapp" type="tel" required value={form.whatsapp} onChange={update("whatsapp")} className={inputCls} placeholder="+880 1XXX-XXXXXX" />
+          <input id="whatsapp" name="whatsapp" type="tel" required value={form.whatsapp} onChange={update} className={inputCls} placeholder="+880 1XXX-XXXXXX" />
         </Field>
 
         <Field label="Phone Number *">
-          <input id="phone" type="tel" required value={form.phone} onChange={update("phone")} className={inputCls} placeholder="+880 1XXX-XXXXXX" />
+          <input id="phone" name="phone" type="tel" required value={form.phone} onChange={update} className={inputCls} placeholder="+880 1XXX-XXXXXX" />
         </Field>
 
         <Field label="Email *">
-          <input id="email" type="email" required value={form.email} onChange={update("email")} className={inputCls} placeholder="you@example.com" />
+          <input id="email" name="email" type="email" required value={form.email} onChange={update} className={inputCls} placeholder="you@example.com" />
         </Field>
 
         <Field label="University / College *">
-          <input id="university" type="text" required value={form.university} onChange={update("university")} className={inputCls} placeholder="e.g. Sylhet Agricultural University" />
+          <input id="university" name="university" type="text" required value={form.university} onChange={update} className={inputCls} placeholder="e.g. Sylhet Agricultural University" />
         </Field>
 
         {formType === "course" && (
           <Field label="Course / Program interested in">
             {courses.length ? (
-              <select id="course" value={form.course} onChange={update("course")} className={inputCls}>
+              <select id="course" name="course" value={form.course} onChange={update} className={inputCls}>
                 <option value="">Select a course…</option>
                 {courses.map((c) => (
                   <option key={c} value={c}>{c}</option>
                 ))}
               </select>
             ) : (
-              <input id="course" type="text" value={form.course} onChange={update("course")} className={inputCls} placeholder="e.g. Bhagavad-gita Study Circle" />
+              <input id="course" name="course" type="text" value={form.course} onChange={update} className={inputCls} placeholder="e.g. Bhagavad-gita Study Circle" />
             )}
           </Field>
         )}
 
         {formType === "alumni" && (
           <Field label="Graduation Year / Batch">
-            <input id="graduationYear" type="text" value={form.graduationYear} onChange={update("graduationYear")} className={inputCls} placeholder="e.g. Class of 2015" />
+            <input id="graduationYear" name="graduationYear" type="text" value={form.graduationYear} onChange={update} className={inputCls} placeholder="e.g. Class of 2015" />
           </Field>
         )}
 
         {formType === "contact" && (
           <Field label="How can we help?">
-            <textarea id="message" rows={4} value={form.message} onChange={update("message")} className={inputCls} placeholder="Share your message…" />
+            <textarea id="message" name="message" rows={4} value={form.message} onChange={update} className={inputCls} placeholder="Share your message…" />
           </Field>
         )}
 

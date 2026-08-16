@@ -40,7 +40,7 @@ const PROGRAMS = [
     ],
     cta: "Apply for residence",
     ctaHref: "/contact",
-    image: "/images/section-2.jpg",
+    image: "/images/jagannath.jpg",
     accent: "from-royal-600 to-royal-800",
     reverse: true,
   },
@@ -57,7 +57,7 @@ const PROGRAMS = [
     ],
     cta: "Join a study circle",
     ctaHref: "/courses",
-    image: "/images/hero.jpg",
+    image: "/images/jagannath.jpg",
     accent: "from-saffron-500 to-gold-600",
     reverse: false,
   },
@@ -78,11 +78,10 @@ export default function ProgramsPage() {
             <div className="mx-auto max-w-7xl px-5 sm:px-8">
               <div className={`grid md:grid-cols-12 gap-10 items-center ${p.reverse ? "md:[&>*:first-child]:order-2" : ""}`}>
                 <Reveal className="md:col-span-6">
-                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20">
-                    <Image src={p.image} alt={p.title} fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-royal-950/40 via-transparent to-transparent" />
-                    <div className={`absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${p.accent} px-3 py-1 text-xs uppercase tracking-[0.22em] text-cream-50`}>
-                      <span className="h-1.5 w-1.5 rounded-full bg-cream-50" /> 0{i + 1}
+                  <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20 bg-royal-950">
+                    <Image src={p.image} alt={p.title} fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
+                    <div className={`absolute inset-x-0 bottom-0 inline-flex items-center gap-2 bg-gradient-to-r ${p.accent} px-4 py-2 text-xs uppercase tracking-[0.22em] text-cream-50`}>
+                      <span className="h-1.5 w-1.5 rounded-full bg-cream-50" /> 0{i + 1} · {p.eyebrow}
                     </div>
                   </div>
                 </Reveal>

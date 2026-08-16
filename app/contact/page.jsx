@@ -38,8 +38,8 @@ const CONTACT = [
   },
   {
     label: "Visit",
-    value: "Temple, Akhalia, Sylhet",
-    href: "https://maps.google.com/?q=Sylhet,Bangladesh",
+    value: "Agricultural University 2nd Gate, Sylhet",
+    href: "https://maps.google.com/?q=Sylhet+Agricultural+University+2nd+Gate+Sylhet+Bangladesh",
     accent: "from-gold-500 to-saffron-600",
     icon: (
       <path d="M12 2a8 8 0 00-8 8c0 5.25 7.05 11.4 7.35 11.63a1 1 0 001.3 0C12.95 21.4 20 15.25 20 10a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z" fill="currentColor"/>
@@ -94,20 +94,19 @@ export default function ContactPage() {
               <div className="ornament-rule mt-5 max-w-xs" />
               <div className="mt-6 space-y-5 text-lg text-royal-900/80 leading-relaxed">
                 <p>
-                  The Bhaktisiddhanta temple is located in Akhalia, Sylhet. All visitors are warmly
-                  welcomed — please come as you are.
+                  The Bhaktisiddhanta temple is located near the 2nd gate of Sylhet Agricultural University. All visitors are warmly welcomed — please come as you are.
                 </p>
                 <div className="rounded-2xl bg-cream-50 ring-1 ring-gold-400/20 p-6 shadow-soft">
                   <div className="text-xs uppercase tracking-[0.22em] text-maroon-700">Temple Address</div>
                   <div className="mt-2 font-display text-2xl text-royal-950 leading-snug">
-                    Bhaktisiddhanta Temple
+                    Bhaktisiddhanta voice
                   </div>
                   <div className="mt-1 text-royal-900/80">
-                    Akhalia, Sylhet<br />
+                    Agricultural University 2nd Gate, Sylhet<br />
                     Bangladesh
                   </div>
                   <a
-                    href="https://maps.google.com/?q=Sylhet,Bangladesh"
+                    href="https://maps.google.com/?q=Sylhet+Agricultural+University+2nd+Gate+Sylhet+Bangladesh"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-2 rounded-full bg-royal-950 px-4 py-2 text-sm font-semibold text-cream-50 hover:bg-royal-800 transition"
@@ -120,8 +119,8 @@ export default function ContactPage() {
             <Reveal className="md:col-span-7" delay={0.1}>
               <div className="relative aspect-[16/11] w-full rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft">
                 <iframe
-                  src="https://maps.google.com/maps?q=Sylhet,%20Bangladesh&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                  title="Bhaktisiddhanta Temple, Sylhet"
+                  src="https://maps.google.com/maps?q=Sylhet+Agricultural+University+2nd+Gate+Sylhet+Bangladesh&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  title="Bhaktisiddhanta Temple — Agricultural University 2nd Gate, Sylhet"
                   className="absolute inset-0 h-full w-full"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

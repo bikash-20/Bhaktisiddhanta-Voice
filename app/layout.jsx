@@ -2,6 +2,7 @@ import "./globals.css";
 import { Cormorant_Garamond, Inter, Tiro_Devanagari_Hindi } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PageTransition from "./components/PageTransition";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -78,7 +79,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${display.variable} ${sans.variable} ${mantra.variable}`}>
       <body className="paper min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>

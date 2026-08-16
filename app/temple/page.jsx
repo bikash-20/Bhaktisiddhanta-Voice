@@ -37,7 +37,7 @@ const DEITIES = [
     name: "Sri Sri Jagannath",
     note: "Lord Jagannath, along with Balabhadra and Subhadra, embodies the Lord's love for His devotees. The annual Rath Yatra carries Their mercy through the streets.",
     mantra: "Jai Jagannath",
-    image: "/images/section-3.jpg",
+    image: "/images/jagannath.jpg",
     accent: "from-royal-600 to-maroon-600",
   },
 ];
@@ -70,9 +70,8 @@ export default function TemplePage() {
               </div>
             </Reveal>
             <Reveal className="md:col-span-5">
-              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft">
-                <Image src="/images/hero.jpg" alt="Inside the temple" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-royal-950/40 via-transparent to-transparent" />
+              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft bg-royal-950">
+                <Image src="/images/jagannath.jpg" alt="Sri Sri Jagannath" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 40vw" />
               </div>
             </Reveal>
           </div>
@@ -85,11 +84,11 @@ export default function TemplePage() {
           <div className="mx-auto max-w-7xl px-5 sm:px-8">
             <div className={`grid md:grid-cols-12 gap-10 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}>
               <Reveal className="md:col-span-6">
-                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20">
-                  <Image src={d.image} alt={d.name} fill className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-royal-950/30 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4 rounded-full bg-cream-50/95 px-3 py-1 text-xs font-semibold text-maroon-700">
-                    {d.mantra}
+                <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20 bg-royal-950">
+                  <Image src={d.image} alt={d.name} fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
+                  <div className="absolute inset-x-0 bottom-0 inline-flex items-center justify-between bg-gradient-to-r from-royal-950/85 to-royal-950/40 px-4 py-2 text-xs font-semibold text-cream-50 backdrop-blur-sm">
+                    <span className="rounded-full bg-cream-50/95 px-3 py-0.5 text-maroon-700">{d.mantra}</span>
+                    <span className="uppercase tracking-[0.22em] text-gold-300">Deity {i + 1}</span>
                   </div>
                 </div>
               </Reveal>

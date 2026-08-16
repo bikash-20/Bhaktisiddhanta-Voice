@@ -94,12 +94,12 @@ export default function AlumniPage() {
               </div>
             </Reveal>
             <Reveal className="md:col-span-5">
-              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/30">
-                <Image src="/images/hero.jpg" alt="Alumni gathering" fill className="object-cover" />
-                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-cream-50/90 p-4 backdrop-blur-sm">
-                  <div className="text-xs uppercase tracking-widest text-maroon-700">Alumni Meet</div>
-                  <div className="font-display text-xl text-royal-950">From cities across the country — and across the world.</div>
-                </div>
+              <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/30 bg-royal-950">
+                <Image src="/images/hero.jpg" alt="Alumni gathering" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 40vw" />
+              </div>
+              <div className="mt-4 rounded-2xl bg-cream-50 ring-1 ring-gold-400/20 p-4 shadow-soft">
+                <div className="text-xs uppercase tracking-widest text-maroon-700">Alumni Meet</div>
+                <div className="font-display text-xl text-royal-950 mt-1">From cities across the country — and across the world.</div>
               </div>
             </Reveal>
           </div>
