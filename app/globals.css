@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand palette — tuned to devotional/spiritual + educational */
+  --color-bg: #fdfaf3;        /* cream-50 */
+  --color-bg-soft: #faf3e0;   /* cream-100 */
+  --color-surface: #ffffff;
+  --color-ink: #1f2f4d;       /* royal-950 */
+  --color-ink-soft: #475569;
+  --color-primary: #b34040;   /* maroon */
+  --color-primary-deep: #762929;
+  --color-secondary: #28406c; /* royal */
+  --color-accent: #cc921a;    /* gold */
+  --color-accent-deep: #a87016;
+  --color-mantra-1: #b34040;
+  --color-mantra-2: #cc921a;
+  --color-mantra-3: #28406c;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Decorative utilities */
+.divine-border {
+  background-image:
+    linear-gradient(to right, transparent, rgba(204, 146, 26, 0.4), transparent),
+    linear-gradient(to right, transparent, rgba(179, 64, 64, 0.3), transparent);
+  background-size: 100% 1px;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+}
+
+.mantra-text {
+  background: linear-gradient(120deg, #b34040 0%, #cc921a 50%, #28406c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.hero-vignette::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(31, 47, 77, 0.55) 100%);
+  pointer-events: none;
+}
+
+.glass {
+  background: rgba(253, 250, 243, 0.7);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+}
+
+.glass-dark {
+  background: rgba(31, 47, 77, 0.7);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+}
+
+.ornament-rule {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(204, 146, 26, 0.6), transparent);
+}
+
+.ornament-rule::after {
+  content: "✦";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-bg);
+  padding: 0 0.75rem;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Subtle paper texture */
+.paper {
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(204, 146, 26, 0.04) 0, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(179, 64, 64, 0.05) 0, transparent 60%);
+}
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection */
+::selection {
+  background: rgba(204, 146, 26, 0.3);
+  color: var(--color-ink);
+}
+
+/* Scrollbar polish (webkit) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-bg-soft); }
+::-webkit-scrollbar-thumb { background: rgba(40, 64, 108, 0.4); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(40, 64, 108, 0.7); }

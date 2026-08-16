@@ -1,0 +1,28 @@
+{
+  "name": "bhaktisiddhanta-voice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Official website of Bhaktisiddhanta Voice — ISKCON Youth Forum, Sylhet. A spiritual & educational platform for university students.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "framer-motion": "^11.5.4",
+    "next": "14.2.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.13",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}

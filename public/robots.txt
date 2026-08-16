@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bhaktisiddhanta-voice.vercel.app/sitemap.xml
