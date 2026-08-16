@@ -119,7 +119,7 @@ export default function ContactPage() {
             <Reveal className="md:col-span-7" delay={0.1}>
               <div className="relative aspect-[16/11] w-full rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft">
                 <iframe
-                  src="https://www.bing.com/maps/embed?h=400&w=500&cp=24.9092~91.9020&lvl=15&typ=d&sty=r&src=SHELL&FORM=MBEDV"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=91.89%2C24.895%2C91.915%2C24.925&layer=mapnik&marker=24.9092%2C91.9020"
                   title="Bhaktisiddhanta Temple — Agricultural University 2nd Gate, Sylhet"
                   className="absolute inset-0 h-full w-full"
                   loading="lazy"
