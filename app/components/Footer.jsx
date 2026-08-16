@@ -81,11 +81,11 @@ export default function Footer() {
                 WhatsApp
               </a>
               <a
-                href="mailto:contact@bhaktisiddhantavoice.org"
+                href="mailto:bikashtalukder040@gmail.com"
                 className="inline-flex items-center gap-2 rounded-full bg-cream-50/10 px-4 py-2 text-sm hover:bg-cream-50/20 hover:-translate-y-0.5 transition-all duration-300 focus-ring"
               >
-                <svg className="h-4 w-4 text-gold-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                Email
+                <svg className="h-4 w-4 shrink-0 text-gold-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                bikashtalukder040@gmail.com
               </a>
             </div>
           </div>
