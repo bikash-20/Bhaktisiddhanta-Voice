@@ -29,8 +29,8 @@ const CONTACT = [
   },
   {
     label: "Email",
-    value: "contact@bhaktisiddhantavoice.org",
-    href: "mailto:contact@bhaktisiddhantavoice.org",
+    value: "bikashtalukder040@gmail.com",
+    href: "mailto:bikashtalukder040@gmail.com",
     accent: "from-royal-600 to-royal-800",
     icon: (
       <path d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" fill="none" stroke="currentColor" strokeWidth="2"/>
@@ -119,7 +119,7 @@ export default function ContactPage() {
             <Reveal className="md:col-span-7" delay={0.1}>
               <div className="relative aspect-[16/11] w-full rounded-3xl overflow-hidden ring-1 ring-gold-400/30 shadow-soft">
                 <iframe
-                  src="https://maps.google.com/maps?q=Sylhet+Agricultural+University+2nd+Gate+Sylhet+Bangladesh&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  src="https://www.bing.com/maps/embed?h=400&w=500&cp=24.9092~91.9020&lvl=15&typ=d&sty=r&src=SHELL&FORM=MBEDV"
                   title="Bhaktisiddhanta Temple — Agricultural University 2nd Gate, Sylhet"
                   className="absolute inset-0 h-full w-full"
                   loading="lazy"
