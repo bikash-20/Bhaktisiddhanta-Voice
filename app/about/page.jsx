@@ -69,7 +69,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-12 gap-10 items-center">
             <Reveal className="md:col-span-6">
               <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft bg-royal-950">
-                <Image src="/images/section-2.jpg" alt="Our temple community" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
+                <Image src="/images/hero.jpg" alt="Our temple community" fill className="object-cover object-center" sizes="(max-width: 768px) 100vw, 50vw" />
               </div>
             </Reveal>
             <Reveal className="md:col-span-6" delay={0.1}>

@@ -12,15 +12,15 @@ const PHOTOS = [
   { src: "/images/hero.jpg", cat: "Temple", title: "Main temple hall" },
   { src: "/images/section-2.jpg", cat: "Deities", title: "Sri Krishna portrait" },
   { src: "/images/section-3.jpg", cat: "Meals", title: "Prasadam distribution" },
+  { src: "/images/jagannath.jpg", cat: "Deities", title: "Sri Jagannath darshan" },
   { src: "/images/hero.jpg", cat: "Sanga", title: "Kirtan evening" },
-  { src: "/images/section-2.jpg", cat: "Festivals", title: "Festival darshan" },
-  { src: "/images/section-3.jpg", cat: "Sanga", title: "Study circle" },
+  { src: "/images/section-3.jpg", cat: "Festivals", title: "Festival darshan" },
+  { src: "/images/section-2.jpg", cat: "Sanga", title: "Study circle" },
   { src: "/images/hero.jpg", cat: "Festivals", title: "Janmashtami celebrations" },
-  { src: "/images/section-2.jpg", cat: "Temple", title: "Daily remembrance" },
-  { src: "/images/section-3.jpg", cat: "Sanga", title: "Group at the temple" },
-  { src: "/images/hero.jpg", cat: "Meals", title: "Preparing prasadam" },
+  { src: "/images/jagannath.jpg", cat: "Temple", title: "Daily remembrance" },
+  { src: "/images/section-3.jpg", cat: "Meals", title: "Preparing prasadam" },
   { src: "/images/section-2.jpg", cat: "Deities", title: "Sri Sri Radha-Krishna darshan" },
-  { src: "/images/section-3.jpg", cat: "Festivals", title: "Festival decoration" },
+  { src: "/images/founder.jpg", cat: "Temple", title: "Founder with the sanga" },
 ];
 
 export default function GalleryPage() {

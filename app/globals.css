@@ -100,8 +100,13 @@ body {
 }
 
 .deity-portrait {
-  object-position: center 32%;
-  transform: scale(1.12);
+  object-position: center 18%;
+  transform: scale(1.04);
+}
+
+.deity-portrait--full {
+  object-position: center center;
+  transform: scale(1.02);
 }
 
 .pill-button {

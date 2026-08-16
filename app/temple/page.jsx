@@ -34,10 +34,10 @@ const DEITIES = [
     accent: "from-maroon-500 to-saffron-500",
   },
   {
-    name: "Sri Krishna",
+    name: "Sri Jagannath",
     note: "The Lord's merciful presence is felt in the temple through kirtan, prayer, and the stillness of daily remembrance. His face, His name, and His pastimes guide every student who comes to the sanga.",
     mantra: "Hare Krishna",
-    image: "/images/section-2.jpg",
+    image: "/images/jagannath.jpg",
     accent: "from-royal-600 to-maroon-600",
   },
 ];

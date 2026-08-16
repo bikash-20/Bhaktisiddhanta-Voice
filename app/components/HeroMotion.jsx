@@ -21,7 +21,7 @@ export default function HeroMotion() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
-          className="mt-5 font-display text-5xl sm:text-6xl md:text-7xl xl:text-[7rem] font-semibold leading-[0.96] tracking-[-0.04em]"
+          className="mt-5 font-display text-4xl sm:text-5xl md:text-6xl xl:text-[5.6rem] font-semibold leading-[0.96] tracking-[-0.04em]"
         >
           Where students meet{" "}
           <span className="block bg-gradient-to-r from-gold-300 via-saffron-300 to-maroon-300 bg-clip-text text-transparent">
@@ -70,7 +70,7 @@ export default function HeroMotion() {
             src="/images/section-2.jpg"
             alt="Sri Krishna portrait in devotional art"
             fill
-            className="object-cover deity-portrait"
+            className="object-cover deity-portrait--full"
             priority
             sizes="(max-width: 1024px) 100vw, 40vw"
           />

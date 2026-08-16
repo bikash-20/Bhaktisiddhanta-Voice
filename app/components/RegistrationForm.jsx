@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -127,96 +128,116 @@ export default function RegistrationForm({
     "w-full rounded-xl border border-maroon-200/60 bg-cream-50 px-4 py-2.5 text-royal-950 placeholder:text-royal-900/40 outline-none focus:ring-2 focus:ring-gold-500/40 focus:border-gold-500/60 transition shadow-sm";
 
   return (
-    <div className="rounded-3xl bg-cream-50 ring-1 ring-gold-400/20 shadow-soft p-6 md:p-10">
-      <div className="text-center max-w-2xl mx-auto mb-8">
-        <h3 className="font-display text-3xl md:text-4xl text-royal-950">{title}</h3>
-        <p className="mt-2 text-royal-900/75">{subtitle}</p>
-        <div className="ornament-rule mt-5 mx-auto max-w-xs" />
-      </div>
-
-      <form onSubmit={onSubmit} className="grid sm:grid-cols-2 gap-5">
-        <input type="hidden" name="formType" value={formType} />
-
-        <Field label="Full Name *">
-          <input id="fullName" name="fullName" type="text" required value={form.fullName} onChange={update} className={inputCls} placeholder="e.g. Arjun Das" />
-        </Field>
-
-        <Field label="WhatsApp Number *">
-          <input id="whatsapp" name="whatsapp" type="tel" required value={form.whatsapp} onChange={update} className={inputCls} placeholder="+880 1XXX-XXXXXX" />
-        </Field>
-
-        <Field label="Phone Number *">
-          <input id="phone" name="phone" type="tel" required value={form.phone} onChange={update} className={inputCls} placeholder="+880 1XXX-XXXXXX" />
-        </Field>
-
-        <Field label="Email *">
-          <input id="email" name="email" type="email" required value={form.email} onChange={update} className={inputCls} placeholder="you@example.com" />
-        </Field>
-
-        <Field label="University / College *">
-          <input id="university" name="university" type="text" required value={form.university} onChange={update} className={inputCls} placeholder="e.g. Sylhet Agricultural University" />
-        </Field>
-
-        {formType === "course" && (
-          <Field label="Course / Program interested in">
-            {courses.length ? (
-              <select id="course" name="course" value={form.course} onChange={update} className={inputCls}>
-                <option value="">Select a course…</option>
-                {courses.map((c) => (
-                  <option key={c} value={c}>{c}</option>
-                ))}
-              </select>
-            ) : (
-              <input id="course" name="course" type="text" value={form.course} onChange={update} className={inputCls} placeholder="e.g. Bhagavad-gita Study Circle" />
-            )}
-          </Field>
-        )}
-
-        {formType === "alumni" && (
-          <Field label="Graduation Year / Batch">
-            <input id="graduationYear" name="graduationYear" type="text" value={form.graduationYear} onChange={update} className={inputCls} placeholder="e.g. Class of 2015" />
-          </Field>
-        )}
-
-        {formType === "contact" && (
-          <Field label="How can we help?">
-            <textarea id="message" name="message" rows={4} value={form.message} onChange={update} className={inputCls} placeholder="Share your message…" />
-          </Field>
-        )}
-
-        <div className="sm:col-span-2 flex items-center justify-between gap-4 pt-2">
-          <p className="text-xs text-royal-900/60">
-            Submissions are recorded and the team is notified instantly.
-          </p>
-          <button
-            type="submit"
-            disabled={submitting}
-            className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${accent} px-6 py-3 text-sm font-semibold text-cream-50 shadow-glow hover:shadow-soft hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed`}
-          >
-            {submitting && (
-              <span className="h-4 w-4 rounded-full border-2 border-cream-50/30 border-t-cream-50 animate-spin" />
-            )}
-            {submitting ? "Sending…" : formType === "alumni" ? "Reconnect" : formType === "contact" ? "Send message" : "Register"}
-          </button>
+    <div className="rounded-[2rem] bg-cream-50 ring-1 ring-gold-400/20 shadow-soft p-4 md:p-6 lg:p-8">
+      <div className="grid lg:grid-cols-[1.1fr_1.4fr] gap-5 md:gap-6">
+        <div className="relative overflow-hidden rounded-[1.6rem] bg-royal-950 min-h-[220px] md:min-h-[300px]">
+          <Image
+            src="/images/form-submission.jpg"
+            alt="Bhaktisiddhanta Voice devotional artwork"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="(max-width: 1024px) 100vw, 35vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-royal-950/85 via-royal-950/20 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 text-cream-50">
+            <div className="text-[0.62rem] uppercase tracking-[0.24em] text-gold-300">Join the sanga</div>
+            <h3 className="mt-2 font-display text-2xl md:text-3xl leading-tight">Let the path become personal.</h3>
+          </div>
         </div>
-      </form>
 
-      <AnimatePresence>
-        {status.kind !== "idle" && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            className={`mt-6 rounded-2xl px-5 py-4 text-sm ${
-              status.kind === "success"
-                ? "bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200"
-                : "bg-rose-50 text-rose-800 ring-1 ring-rose-200"
-            }`}
-          >
-            {status.message}
-          </motion.div>
-        )}
-      </AnimatePresence>
+        <div className="p-2 md:p-3">
+          <div className="text-center max-w-2xl mx-auto mb-8">
+            <h3 className="font-display text-3xl md:text-4xl text-royal-950">{title}</h3>
+            <p className="mt-2 text-royal-900/75">{subtitle}</p>
+            <div className="ornament-rule mt-5 mx-auto max-w-xs" />
+          </div>
+
+          <form onSubmit={onSubmit} className="grid sm:grid-cols-2 gap-5">
+            <input type="hidden" name="formType" value={formType} />
+
+            <Field label="Full Name *">
+              <input id="fullName" name="fullName" type="text" required value={form.fullName} onChange={update} className={inputCls} placeholder="e.g. Arjun Das" />
+            </Field>
+
+            <Field label="WhatsApp Number *">
+              <input id="whatsapp" name="whatsapp" type="tel" required value={form.whatsapp} onChange={update} className={inputCls} placeholder="+880 1XXX-XXXXXX" />
+            </Field>
+
+            <Field label="Phone Number *">
+              <input id="phone" name="phone" type="tel" required value={form.phone} onChange={update} className={inputCls} placeholder="+880 1XXX-XXXXXX" />
+            </Field>
+
+            <Field label="Email *">
+              <input id="email" name="email" type="email" required value={form.email} onChange={update} className={inputCls} placeholder="you@example.com" />
+            </Field>
+
+            <Field label="University / College *">
+              <input id="university" name="university" type="text" required value={form.university} onChange={update} className={inputCls} placeholder="e.g. Sylhet Agricultural University" />
+            </Field>
+
+            {formType === "course" && (
+              <Field label="Course / Program interested in">
+                {courses.length ? (
+                  <select id="course" name="course" value={form.course} onChange={update} className={inputCls}>
+                    <option value="">Select a course…</option>
+                    {courses.map((c) => (
+                      <option key={c} value={c}>{c}</option>
+                    ))}
+                  </select>
+                ) : (
+                  <input id="course" name="course" type="text" value={form.course} onChange={update} className={inputCls} placeholder="e.g. Bhagavad-gita Study Circle" />
+                )}
+              </Field>
+            )}
+
+            {formType === "alumni" && (
+              <Field label="Graduation Year / Batch">
+                <input id="graduationYear" name="graduationYear" type="text" value={form.graduationYear} onChange={update} className={inputCls} placeholder="e.g. Class of 2015" />
+              </Field>
+            )}
+
+            {formType === "contact" && (
+              <Field label="How can we help?">
+                <textarea id="message" name="message" rows={4} value={form.message} onChange={update} className={inputCls} placeholder="Share your message…" />
+              </Field>
+            )}
+
+            <div className="sm:col-span-2 flex items-center justify-between gap-4 pt-2">
+              <p className="text-xs text-royal-900/60">
+                Submissions are recorded and the team is notified instantly.
+              </p>
+              <button
+                type="submit"
+                disabled={submitting}
+                className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${accent} px-6 py-3 text-sm font-semibold text-cream-50 shadow-glow hover:shadow-soft hover:-translate-y-0.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed`}
+              >
+                {submitting && (
+                  <span className="h-4 w-4 rounded-full border-2 border-cream-50/30 border-t-cream-50 animate-spin" />
+                )}
+                {submitting ? "Sending…" : formType === "alumni" ? "Reconnect" : formType === "contact" ? "Send message" : "Register"}
+              </button>
+            </div>
+          </form>
+
+          <AnimatePresence>
+            {status.kind !== "idle" && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                className={`mt-6 rounded-2xl px-5 py-4 text-sm ${
+                  status.kind === "success"
+                    ? "bg-emerald-50 text-emerald-800 ring-1 ring-emerald-200"
+                    : "bg-rose-50 text-rose-800 ring-1 ring-rose-200"
+                }`}
+              >
+                {status.message}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </div>
   );
 }
