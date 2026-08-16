@@ -86,10 +86,6 @@ export default function TemplePage() {
               <Reveal className="md:col-span-6">
                 <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20 bg-royal-950">
                   <Image src={d.image} alt={d.name} fill className="object-cover deity-portrait" sizes="(max-width: 768px) 100vw, 50vw" />
-                  <div className="absolute inset-x-0 bottom-0 inline-flex items-center justify-between bg-gradient-to-r from-royal-950/85 to-royal-950/40 px-4 py-2 text-xs font-semibold text-cream-50 backdrop-blur-sm">
-                    <span className="rounded-full bg-cream-50/95 px-3 py-0.5 text-maroon-700">{d.mantra}</span>
-                    <span className="uppercase tracking-[0.22em] text-gold-300">Deity {i + 1}</span>
-                  </div>
                 </div>
               </Reveal>
               <Reveal className="md:col-span-6" delay={0.1}>

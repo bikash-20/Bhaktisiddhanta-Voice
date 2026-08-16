@@ -80,9 +80,6 @@ export default function ProgramsPage() {
                 <Reveal className="md:col-span-6">
                   <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-soft ring-1 ring-gold-400/20 bg-royal-950">
                     <Image src={p.image} alt={p.title} fill className="object-cover deity-portrait" sizes="(max-width: 768px) 100vw, 50vw" />
-                    <div className={`absolute inset-x-0 bottom-0 inline-flex items-center gap-2 bg-gradient-to-r ${p.accent} px-4 py-2 text-xs uppercase tracking-[0.22em] text-cream-50`}>
-                      <span className="h-1.5 w-1.5 rounded-full bg-cream-50" /> 0{i + 1} · {p.eyebrow}
-                    </div>
                   </div>
                 </Reveal>
                 <Reveal className="md:col-span-6" delay={0.1}>

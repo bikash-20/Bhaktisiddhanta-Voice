@@ -70,17 +70,10 @@ export default function HeroMotion() {
             src="/images/section-2.jpg"
             alt="Sri Krishna portrait in devotional art"
             fill
-            className="object-cover deity-portrait scale-[1.08]"
+            className="object-cover deity-portrait"
             priority
             sizes="(max-width: 1024px) 100vw, 40vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-royal-950/0 via-royal-950/10 to-royal-950/10" />
-        </div>
-        <div className="mt-5 rounded-2xl bg-cream-50/95 ring-1 ring-gold-400/30 px-5 py-4 shadow-soft">
-          <div className="font-display text-xl text-royal-950">Sri Krishna</div>
-          <div className="text-sm text-royal-900/75 mt-1">
-            Sweet remembrance, kirtan, and a daily practice of devotion.
-          </div>
         </div>
       </motion.div>
     </div>

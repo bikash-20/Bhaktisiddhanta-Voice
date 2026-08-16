@@ -112,9 +112,6 @@ export default function Home() {
             <Reveal className="md:col-span-5">
               <div className="relative aspect-[5/6] rounded-3xl overflow-hidden shadow-soft bg-royal-950">
                 <Image src="/images/section-3.jpg" alt="Students gathering" fill className="object-cover object-center" />
-                <div className="absolute inset-x-0 bottom-0 inline-flex items-center gap-1.5 rounded-t-2xl bg-cream-50/95 px-4 py-2 text-xs font-medium text-maroon-700 backdrop-blur-sm">
-                  <span className="h-1.5 w-1.5 rounded-full bg-maroon-500" /> A sanga for students
-                </div>
               </div>
             </Reveal>
             <Reveal className="md:col-span-7" delay={0.1}>
