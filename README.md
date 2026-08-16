@@ -133,7 +133,7 @@ The Course and Alumni forms POST to a Google Apps Script Web App backend, which:
    ```
 6. Restart `npm run dev`. Submit a test form — a row should appear in the sheet and both inboxes should receive an email.
 
-> If `NEXT_PUBLIC_FORMS_ENDPOINT` is not set, the forms fall back to opening the user's mail client with a prefilled message to `biplobgolder600@gmail.com`.
+> If `NEXT_PUBLIC_FORMS_ENDPOINT` is not set, the forms fall back to opening WhatsApp (`wa.me/8801993210511`) with the registration prefilled as a chat message — so submissions always reach the team, on any device, with zero backend setup.
 
 ---
 

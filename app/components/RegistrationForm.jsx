@@ -64,14 +64,22 @@ export default function RegistrationForm({
     setStatus({ kind: "idle", message: "" });
 
     // Apps Script Web App endpoint configured via NEXT_PUBLIC_FORMS_ENDPOINT
-    // If not configured, fall back to a mailto: link so submissions are never lost.
+    // If not configured, fall back to WhatsApp with a prefilled message so submissions are never lost.
     const endpoint = process.env.NEXT_PUBLIC_FORMS_ENDPOINT;
+    const WHATSAPP_NUMBER = "8801993210511"; // same number used across the site (Header/Footer/Contact)
 
     const payload = {
       ...form,
       formType,
       submittedAt: new Date().toISOString(),
     };
+
+    const subject =
+      formType === "alumni"
+        ? "Alumni Registration"
+        : formType === "contact"
+          ? "General Inquiry"
+          : "Course Registration";
 
     try {
       if (endpoint) {
@@ -84,21 +92,16 @@ export default function RegistrationForm({
         });
         setStatus({ kind: "success", message: "Thank you! We've recorded your details — the team will reach you on WhatsApp very soon." });
       } else {
-        // Fallback: open user's mail client with a prefilled message — never lose a registration.
-        const subject = encodeURIComponent(
-          formType === "alumni"
-            ? "Alumni Registration"
-            : formType === "contact"
-              ? "General Inquiry"
-              : "Course Registration"
+        // Fallback: open WhatsApp to the temple number with the registration prefilled.
+        // Reliable on every device — the team receives it instantly as a chat message.
+        const message = encodeURIComponent(
+          `${subject}\n\n` +
+            Object.entries(payload)
+              .map(([k, v]) => `${k}: ${v}`)
+              .join("\n")
         );
-        const body = encodeURIComponent(
-          Object.entries(payload)
-            .map(([k, v]) => `${k}: ${v}`)
-            .join("\n")
-        );
-        window.location.href = `mailto:contact@bhaktisiddhantavoice.org?subject=${subject}&body=${body}`;
-        setStatus({ kind: "success", message: "Opening your email app to send your registration — please hit send!" });
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, "_blank", "noopener,noreferrer");
+        setStatus({ kind: "success", message: "WhatsApp has opened with your registration prefilled — just hit send and you're all set!" });
       }
       setForm({
         fullName: "",
