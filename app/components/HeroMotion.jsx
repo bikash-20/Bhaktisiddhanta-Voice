@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function HeroMotion() {
   return (
-    <div className="grid lg:grid-cols-12 gap-10 items-center min-h-[70vh]">
-      <div className="lg:col-span-7 text-cream-50">
+    <div className="flex min-h-[70vh] items-center">
+      <div className="max-w-3xl text-cream-50">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,29 +52,8 @@ export default function HeroMotion() {
           <Link href="/temple" className="pill-button pill-button-secondary">
             Visit the Temple
           </Link>
-          <Link href="/about" className="pill-button pill-button-ghost">
-            Learn More →
-          </Link>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, scale: 0.92 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.0, delay: 0.4 }}
-        className="lg:col-span-5 hidden lg:block"
-      >
-        <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] ring-1 ring-gold-400/30 shadow-soft bg-royal-950">
-          <Image
-            src="/images/section-2.jpg"
-            alt="Sri Krishna portrait in devotional art"
-            fill
-            className="object-cover deity-portrait--full"
-            priority
-            sizes="(max-width: 1024px) 100vw, 40vw"
-          />
-        </div>
-      </motion.div>
     </div>
   );
 }
