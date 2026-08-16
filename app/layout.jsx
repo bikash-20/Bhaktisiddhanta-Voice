@@ -46,17 +46,23 @@ export const metadata = {
     "Sylhet Engineering College",
   ],
   authors: [{ name: "Bhaktisiddhanta Voice" }],
+  icons: {
+    icon: [{ url: "/images/logo.svg", type: "image/svg+xml" }],
+    apple: "/images/logo.svg",
+  },
   openGraph: {
     type: "website",
     siteName: "Bhaktisiddhanta Voice",
     title: "Bhaktisiddhanta Voice — ISKCON Youth Forum, Sylhet",
     description:
       "Spreading Krishna consciousness among students in Sylhet since 2009. Temple, meals, residence, courses.",
+    images: ["/images/logo.svg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Bhaktisiddhanta Voice — ISKCON Youth Forum, Sylhet",
     description: "Temple, meals, residence, courses — since 2009.",
+    images: ["/images/logo.svg"],
   },
   robots: { index: true, follow: true },
 };

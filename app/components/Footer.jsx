@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Logo from "./Logo";
 
 const NAV = [
   { href: "/about", label: "About Us" },
@@ -31,11 +32,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-3">
-              <div className="grid place-items-center h-11 w-11 rounded-full bg-cream-50/10 ring-1 ring-gold-400/40">
-                <svg viewBox="0 0 64 64" className="h-8 w-8 text-gold-400" aria-hidden="true">
-                  <path d="M8 22c8-4 16-4 24 0 8-4 16-4 24 0v22c-8-4-16-4-24 0-8-4-16-4-24 0V22z" fill="currentColor" />
-                  <path d="M32 6c3 4 6 8 6 12 0 3-2 5-4 6 1-3-1-6-2-7 0 3-2 6-2 9 0 5 4 9 9 9s9-4 9-9c0-7-7-13-16-20z" fill="#e07413" />
-                </svg>
+              <div className="grid place-items-center h-14 w-14 rounded-full bg-cream-50 ring-1 ring-gold-400/40 overflow-hidden">
+                <Logo className="h-12 w-12" />
               </div>
               <div>
                 <div className="font-display text-2xl font-semibold">Bhaktisiddhanta Voice</div>

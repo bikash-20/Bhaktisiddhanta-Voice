@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "./Logo";
 
 const NAV = [
   { href: "/", label: "Home" },
@@ -15,31 +16,6 @@ const NAV = [
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
-
-function LogoMark({ className = "" }) {
-  return (
-    <svg
-      viewBox="0 0 64 64"
-      className={className}
-      aria-hidden="true"
-      role="img"
-    >
-      {/* Open book base */}
-      <path
-        d="M8 22c8-4 16-4 24 0 8-4 16-4 24 0v22c-8-4-16-4-24 0-8-4-16-4-24 0V22z"
-        fill="currentColor"
-        opacity="0.95"
-      />
-      {/* Flame */}
-      <path
-        d="M32 6c3 4 6 8 6 12 0 3-2 5-4 6 1-3-1-6-2-7 0 3-2 6-2 9 0 5 4 9 9 9s9-4 9-9c0-7-7-13-16-20z"
-        fill="#e07413"
-      />
-      {/* Pen nib */}
-      <path d="M30 30l4 4-6 12-2-2 4-14z" fill="#cc921a" />
-    </svg>
-  );
-}
 
 export default function Header() {
   const pathname = usePathname();
@@ -73,8 +49,8 @@ export default function Header() {
           <div className="flex h-16 md:h-20 items-center justify-between">
             {/* Logo / wordmark */}
             <Link href="/" className="group flex items-center gap-3 focus-ring">
-              <span className="grid place-items-center h-10 w-10 rounded-full bg-maroon-50 ring-1 ring-gold-300 text-maroon-600 transition group-hover:scale-105">
-                <LogoMark className="h-7 w-7" />
+              <span className="grid place-items-center h-11 w-11 sm:h-14 sm:w-14 rounded-full bg-cream-50 ring-1 ring-gold-300 shadow-soft transition group-hover:scale-105 overflow-hidden">
+                <Logo className="h-10 w-10 sm:h-12 sm:w-12" />
               </span>
               <div className="leading-tight">
                 <div className="font-display text-[1.05rem] sm:text-[1.2rem] font-semibold text-royal-950">

@@ -1,0 +1,151 @@
+"use client";
+
+export default function Logo({ className = "h-12 w-12" }) {
+  return (
+    <svg
+      viewBox="0 0 400 480"
+      className={className}
+      role="img"
+      aria-label="Bhaktisiddhanta Voice"
+    >
+      <defs>
+        <linearGradient id="flame" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ffb967" />
+          <stop offset="55%" stopColor="#ee7a18" />
+          <stop offset="100%" stopColor="#b13a08" />
+        </linearGradient>
+        <linearGradient id="pageLeft" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#3a5dcd" />
+          <stop offset="100%" stopColor="#1f3a8a" />
+        </linearGradient>
+        <linearGradient id="pageRight" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#5fb4ee" />
+          <stop offset="100%" stopColor="#1e73b8" />
+        </linearGradient>
+        <linearGradient id="banner" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#1a1a1a" />
+          <stop offset="100%" stopColor="#0a0a0a" />
+        </linearGradient>
+        <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#ffe27a" />
+          <stop offset="60%" stopColor="#f4a82b" />
+          <stop offset="100%" stopColor="#c46400" />
+        </radialGradient>
+        <path id="arcTop" d="M 70 220 A 130 130 0 0 1 330 220" fill="none" />
+      </defs>
+
+      {/* Laurel leaves */}
+      <g fill="#111">
+        <g>
+          <ellipse cx="75" cy="130" rx="15" ry="6" transform="rotate(-70 75 130)" />
+          <ellipse cx="60" cy="155" rx="16" ry="6" transform="rotate(-60 60 155)" />
+          <ellipse cx="50" cy="185" rx="17" ry="6" transform="rotate(-50 50 185)" />
+          <ellipse cx="45" cy="218" rx="18" ry="6" transform="rotate(-35 45 218)" />
+          <ellipse cx="50" cy="252" rx="17" ry="6" transform="rotate(-18 50 252)" />
+          <ellipse cx="65" cy="285" rx="17" ry="6" transform="rotate(-5 65 285)" />
+          <ellipse cx="90" cy="315" rx="17" ry="6" transform="rotate(10 90 315)" />
+          <ellipse cx="125" cy="340" rx="17" ry="6" transform="rotate(22 125 340)" />
+          <ellipse cx="170" cy="358" rx="17" ry="6" transform="rotate(35 170 358)" />
+        </g>
+        <g>
+          <ellipse cx="325" cy="130" rx="15" ry="6" transform="rotate(70 325 130)" />
+          <ellipse cx="340" cy="155" rx="16" ry="6" transform="rotate(60 340 155)" />
+          <ellipse cx="350" cy="185" rx="17" ry="6" transform="rotate(50 350 185)" />
+          <ellipse cx="355" cy="218" rx="18" ry="6" transform="rotate(35 355 218)" />
+          <ellipse cx="350" cy="252" rx="17" ry="6" transform="rotate(18 350 252)" />
+          <ellipse cx="335" cy="285" rx="17" ry="6" transform="rotate(5 335 285)" />
+          <ellipse cx="310" cy="315" rx="17" ry="6" transform="rotate(-10 310 315)" />
+          <ellipse cx="275" cy="340" rx="17" ry="6" transform="rotate(-22 275 340)" />
+          <ellipse cx="230" cy="358" rx="17" ry="6" transform="rotate(-35 230 358)" />
+        </g>
+      </g>
+
+      {/* Mantra on arc */}
+      <text fontFamily="Georgia, serif" fontSize="16" fill="#0e2c66" letterSpacing="1">
+        <textPath href="#arcTop" startOffset="50%" textAnchor="middle">
+          Hare Krishna Hare Krishna Krishna Krishna Hare Hare · Hare Rama Hare Rama Rama Rama Hare Hare
+        </textPath>
+      </text>
+
+      {/* Flame */}
+      <path
+        d="M200 28c8 9 16 18 16 27 0 4-3 7-6 8 2-6-3-11-6-13 0 6-5 12-5 18 0 9 7 16 16 16s16-7 16-16c0-14-14-23-31-40z"
+        fill="url(#flame)"
+      />
+
+      {/* Open book */}
+      <path
+        d="M200 92c-22-6-44-6-66 0v118c22-6 44-6 66 0 22-6 44-6 66 0V92c-22-6-44-6-66 0z"
+        fill="#0c1e63"
+      />
+      <path d="M198 100c-18-4-38-4-58 0v104c20-4 40-4 58 0V100z" fill="url(#pageLeft)" />
+      <path d="M202 100c18-4 38-4 58 0v104c-20-4-40-4-58 0V100z" fill="url(#pageRight)" />
+      <path
+        d="M140 198c20-4 40-4 60 0s40 4 60 0l-2 8c-20 4-40 4-58 0s-38-4-58 0z"
+        fill="#0a1a4d"
+        opacity="0.4"
+      />
+
+      {/* Pen / quill */}
+      <path
+        d="M200 105 C 198 150 198 195 200 240"
+        stroke="#caa015"
+        strokeWidth="5"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path d="M194 232 l12 0 -6 14z" fill="#caa015" />
+      <circle cx="200" cy="248" r="3" fill="#8a6a0e" />
+
+      {/* Banner */}
+      <g>
+        <path d="M40 332 l40 -28 h240 l40 28 -40 28 h-240z" fill="url(#banner)" />
+        <path d="M40 332 l-20 18 30 12 -10 -30z" fill="#0a0a0a" />
+        <path d="M360 332 l20 18 -30 12 10 -30z" fill="#0a0a0a" />
+        <text
+          x="200"
+          y="350"
+          textAnchor="middle"
+          fontFamily="Georgia, serif"
+          fontWeight="700"
+          fontSize="26"
+          letterSpacing="3"
+          fill="#ffd23a"
+        >
+          BHAKTISIDDHANTA VOICE
+        </text>
+      </g>
+
+      <text x="200" y="392" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="13" fill="#222" fontWeight="600">
+        Conducted by : LYFE, Sylhet
+      </text>
+      <text x="200" y="410" textAnchor="middle" fontFamily="Arial, sans-serif" fontSize="13" fill="#222" fontWeight="600">
+        Estd. 2009
+      </text>
+
+      {/* Left monk with lamp */}
+      <g>
+        <ellipse cx="92" cy="338" rx="14" ry="3" fill="#000" />
+        <path d="M84 318 q8 -22 8 -32 q4 2 4 8 q4 4 6 10 q4 8 4 14 z" fill="#e89a1d" />
+        <circle cx="94" cy="296" r="3.5" fill="#e89a1d" />
+        <path
+          d="M92 298 q4 10 0 18"
+          stroke="#e89a1d"
+          strokeWidth="2.5"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path d="M92 314 q-2 -4 0 -8 q2 4 0 8z" fill="#ff5a1a" />
+      </g>
+
+      {/* Right sun + figures */}
+      <g>
+        <circle cx="308" cy="306" r="22" fill="url(#sun)" />
+        <path d="M292 332 q3 -14 6 -18 q2 4 2 8 q2 -2 2 -6 q3 4 5 14z" fill="#0c6e3f" />
+        <path d="M316 332 q3 -16 6 -20 q2 4 2 8 q2 -2 2 -6 q3 4 5 16z" fill="#0c6e3f" />
+        <ellipse cx="300" cy="336" rx="14" ry="3" fill="#0c6e3f" opacity="0.3" />
+        <ellipse cx="322" cy="336" rx="14" ry="3" fill="#0c6e3f" opacity="0.3" />
+      </g>
+    </svg>
+  );
+}
