@@ -6,7 +6,7 @@ import WordReveal from "./WordReveal";
 
 export default function HeroMotion() {
   return (
-    <div className="flex min-h-[70vh] items-center">
+    <div className="flex min-h-[50vh] items-center lg:min-h-[70vh]">
       <div className="max-w-3xl text-cream-50">
         <motion.div
           initial={{ opacity: 0, y: 18 }}

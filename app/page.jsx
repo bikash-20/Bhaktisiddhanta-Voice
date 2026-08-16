@@ -80,27 +80,45 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden isolate">
-        <div className="absolute inset-0 -z-20 overflow-hidden bg-royal-950">
+      <section className="relative overflow-hidden isolate bg-gradient-to-b from-royal-950 via-royal-900 to-royal-950 lg:bg-transparent">
+        {/* Desktop-only full-bleed background image */}
+        <div className="absolute inset-0 -z-20 overflow-hidden hidden lg:block">
           <Image
             src={IMAGES.hero}
             alt="Bhaktisiddhanta Voice community gathered at the temple"
             fill
             priority
             sizes="100vw"
-            className="hero-bg-image object-cover object-center max-lg:object-contain"
+            className="hero-bg-image object-cover object-center"
           />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(212,167,74,0.22),_transparent_28%),linear-gradient(120deg,rgba(13,20,31,0.88),rgba(20,34,54,0.74),rgba(28,53,66,0.62),rgba(20,28,44,0.82))]" />
           <div className="absolute inset-0 bg-gradient-to-t from-royal-950/95 via-royal-950/45 to-transparent" />
         </div>
         <div className="absolute inset-x-0 top-20 -z-10 h-80 bg-[radial-gradient(circle,_rgba(244,185,90,0.22),_transparent_60%)] blur-3xl" />
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-20 md:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-10 md:pt-20 md:pb-12 lg:pt-16 lg:pb-24">
           <HeroMotion />
+
+          {/* Mobile & tablet: the hero photo shown in full — the main attraction */}
+          <div className="mt-10 md:mt-12 lg:hidden">
+            <div className="relative">
+              <Image
+                src={IMAGES.hero}
+                alt="Bhaktisiddhanta Voice community gathered at the temple"
+                priority
+                className="w-full h-auto rounded-[1.75rem] ring-1 ring-gold-400/30 shadow-[0_34px_70px_-34px_rgba(0,0,0,0.85)]"
+              />
+              <div className="pointer-events-none absolute inset-0 rounded-[1.75rem] bg-gradient-to-t from-royal-950/70 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-5 right-5 flex items-center justify-between text-cream-50">
+                <div className="text-[0.62rem] uppercase tracking-[0.24em] text-gold-300">The temple community</div>
+                <div className="text-[0.62rem] uppercase tracking-[0.24em] text-cream-100/70">Sylhet</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Mantra ribbon */}
-        <div className="relative -mt-8 mb-10 z-10 px-4 sm:px-6 lg:px-8">
+        <div className="relative -mt-8 max-lg:mt-8 mb-10 z-10 px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl rounded-[1.6rem] glass-dark px-5 py-4 md:px-7 md:py-5 ring-1 ring-gold-400/30 shadow-[0_18px_38px_-22px_rgba(0,0,0,0.72)]">
             <Mantra className="" />
           </div>
